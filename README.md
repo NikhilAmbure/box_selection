@@ -5,7 +5,8 @@ box internal dimensions, weight capacity and cost.
 
 ## Setup
 ```bash
-python -m venv .venv && .venv\Scripts\activate    # Windows PowerShell
+python -m venv .venv 
+.venv\Scripts\activate    # Windows PowerShell
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py seed_demo          # demo boxes + products
@@ -40,7 +41,7 @@ Errors: `400` bad input, `404` unknown SKU/order, `422` no single box fits.
 - Heuristic packer: a "fits" result is always a valid packing, but it may miss a tight
   packing that exists (could recommend a larger box than strictly necessary).
 - No padding/void-fill, fragility, or "keep upright" constraints; no multi-box splitting
-  (returns 422 if nothing fits). The API has no authentication (assignment scope).
+  (returns 422 if nothing fits).
 st
 - 
 ## Tests
